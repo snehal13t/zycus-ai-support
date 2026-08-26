@@ -416,12 +416,3 @@ DESIGN.md
 for the required production design analysis.
 
 ```
-
-Save it.
-
-### One thing I deliberately did
-
-I **didn't claim the system has CI, streaming, or a UI**, because we haven't built those. Better to have a smaller honest submission than a README that promises features the reviewer can't find.
-
-Next we'll check whether the README's commands actually work from a clean environment, then do the final Git/security audit.
-```
