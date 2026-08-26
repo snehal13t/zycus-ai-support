@@ -414,5 +414,3 @@ DESIGN.md
 ```
 
 for the required production design analysis.
-
-```
