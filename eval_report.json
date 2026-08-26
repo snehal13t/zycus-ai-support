@@ -1,0 +1,96 @@
+{
+  "task1": [
+    {
+      "test_id": "T1-01",
+      "name": "Feature request with incorrect historical label",
+      "status": "PASS",
+      "quality_score": 1.0,
+      "checks_passed": 3,
+      "checks_total": 3
+    },
+    {
+      "test_id": "T1-02",
+      "name": "SSO new-user authentication issue",
+      "status": "PASS",
+      "quality_score": 1.0,
+      "checks_passed": 4,
+      "checks_total": 4
+    },
+    {
+      "test_id": "T1-03",
+      "name": "Production performance issue",
+      "status": "PASS",
+      "quality_score": 1.0,
+      "checks_passed": 2,
+      "checks_total": 2
+    },
+    {
+      "test_id": "T1-04",
+      "name": "Billing question",
+      "status": "PASS",
+      "quality_score": 1.0,
+      "checks_passed": 2,
+      "checks_total": 2
+    },
+    {
+      "test_id": "T1-05",
+      "name": "Ambiguous adversarial ticket",
+      "status": "PASS",
+      "quality_score": 1.0,
+      "checks_passed": 2,
+      "checks_total": 2
+    }
+  ],
+  "task2": [
+    {
+      "test_id": "T2-01",
+      "name": "At-risk account with escalation signals",
+      "status": "PASS",
+      "quality_score": 1.0,
+      "checks_passed": 4,
+      "checks_total": 4
+    },
+    {
+      "test_id": "T2-02",
+      "name": "At-risk account with sparse ticket history",
+      "status": "PASS",
+      "quality_score": 1.0,
+      "checks_passed": 2,
+      "checks_total": 2
+    },
+    {
+      "test_id": "T2-03",
+      "name": "Healthy account with limited signals",
+      "status": "PASS",
+      "quality_score": 1.0,
+      "checks_passed": 2,
+      "checks_total": 2
+    },
+    {
+      "test_id": "T2-04",
+      "name": "New customer account",
+      "status": "PASS",
+      "quality_score": 1.0,
+      "checks_passed": 2,
+      "checks_total": 2
+    },
+    {
+      "test_id": "T2-05",
+      "name": "Incomplete account data \u2014 adversarial",
+      "status": "PASS",
+      "quality_score": 1.0,
+      "checks_passed": 3,
+      "checks_total": 3
+    }
+  ],
+  "task1_summary": {
+    "tests": 5,
+    "passed": 5,
+    "average_quality_score": 1.0
+  },
+  "task2_summary": {
+    "tests": 5,
+    "passed": 5,
+    "average_quality_score": 1.0
+  }
+}

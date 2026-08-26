@@ -1,0 +1,69 @@
+{
+  "T1-01": {
+    "product_area": "DataBridge Pro Data Ingestion",
+    "issue_category": "Feature Request",
+    "urgency": "P3",
+    "urgency_reason": "The request is for a new product enhancement and does not involve an outage, downtime, or data loss.",
+    "reasoning": "The user is requesting a new capability to select and archive multiple entries at once.",
+    "known_issue": false,
+    "kb_reference": null,
+    "responder_team": "Product Management",
+    "first_response": "Thank you for submitting this feedback. We understand that bulk archiving would improve efficiency for your team."
+  },
+  "T1-02": {
+    "product_area": "SSO",
+    "issue_category": "Bug",
+    "urgency": "P2",
+    "urgency_reason": "New users are unable to authenticate, blocking access for affected users.",
+    "reasoning": "The issue matches the known new-user SSO authentication scenario.",
+    "known_issue": true,
+    "kb_reference": {
+      "source": "knowledge-base/troubleshooting/authentication-sso.md",
+      "section": "New Users Cannot Authenticate via SSO",
+      "relevance_score": 0.39
+    },
+    "responder_team": "Identity & Authentication Support",
+    "first_response": "Please verify that the affected users' IDP groups are mapped to the appropriate product roles."
+  },
+  "T1-03": {
+    "product_area": "Pipeline Monitoring",
+    "issue_category": "Performance",
+    "urgency": "P2",
+    "urgency_reason": "The production pipeline is experiencing significant performance degradation affecting multiple users.",
+    "reasoning": "The ticket describes a substantial production performance issue.",
+    "known_issue": true,
+    "kb_reference": {
+      "source": "knowledge-base/troubleshooting/performance-and-integrations.md",
+      "section": "DataBridge Pro: Pipeline Throughput Degradation",
+      "relevance_score": 0.31
+    },
+    "responder_team": "Performance Engineering",
+    "first_response": "We understand the impact of the production performance degradation and will investigate the pipeline health and throughput."
+  },
+  "T1-04": {
+    "product_area": "Billing",
+    "issue_category": "Billing",
+    "urgency": "P4",
+    "urgency_reason": "The customer is requesting clarification about billing rather than reporting a service disruption.",
+    "reasoning": "The ticket concerns invoice and active-seat billing rules.",
+    "known_issue": true,
+    "kb_reference": {
+      "source": "knowledge-base/billing/billing-and-plans.md",
+      "section": "How Seat Billing Works",
+      "relevance_score": 0.35
+    },
+    "responder_team": "Billing Support",
+    "first_response": "We can clarify how active seats are counted and how that affects your invoice."
+  },
+  "T1-05": {
+    "product_area": "Unclear",
+    "issue_category": "Bug",
+    "urgency": "P3",
+    "urgency_reason": "The ticket does not provide evidence of a production outage or business-stopping impact.",
+    "reasoning": "The ticket is ambiguous and does not contain enough evidence for a higher-priority classification.",
+    "known_issue": false,
+    "kb_reference": null,
+    "responder_team": "Technical Support",
+    "first_response": "Could you provide the affected product, error message, and steps to reproduce the issue?"
+  }
+}

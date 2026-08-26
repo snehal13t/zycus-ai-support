@@ -1,0 +1,58 @@
+{
+  "T2-01": {
+    "executive_summary": "Gavin Belson Co is currently At Risk with stable usage across 1,355 active seats and $96,000 ARR. The account has 9 open tickets and account-level escalation signals including negative sentiment and multiple recent P1 incidents. The account also contains conflicting P1-count information that should be clarified. The TAM should focus the QBR discussion on operational stability and customer confidence.",
+    "open_risks": [
+      {
+        "risk_type": "escalation",
+        "source": "account",
+        "evidence": "Negative sentiment detected in recent support tickets",
+        "ticket_id": null,
+        "quote": null
+      },
+      {
+        "risk_type": "escalation",
+        "source": "account",
+        "evidence": "2 P1 tickets in the last 30 days",
+        "ticket_id": null,
+        "quote": null
+      }
+    ],
+    "talking_points": [
+      "Review recent P1 incidents and overall operational stability.",
+      "Review the status and resolution plan for open support tickets.",
+      "Clarify the conflicting P1-ticket information in the account record."
+    ]
+  },
+  "T2-02": {
+    "executive_summary": "Omni Consumer Products is marked At Risk with inactive usage despite having 298 active seats. The account has 7 open tickets, while only one ticket falls within the dataset-relative 90-day window. The recent ticket concerned DataBridge Pro performance and was closed as P2. The TAM should validate current usage and confirm whether the performance issue is fully resolved.",
+    "open_risks": [],
+    "talking_points": [
+      "Confirm the current status of DataBridge Pro performance.",
+      "Discuss the account's inactive usage trend and adoption."
+    ]
+  },
+  "T2-03": {
+    "executive_summary": "Pied Piper Inc is marked At Risk in the supplied account data. No recent ticket history is available in the dataset-relative 90-day window. The absence of recent tickets limits the available support evidence for assessing current operational risk. The TAM should validate current account health and usage directly.",
+    "open_risks": [],
+    "talking_points": [
+      "Review current usage and adoption trends.",
+      "Confirm whether there are unresolved support concerns not represented in the recent ticket history."
+    ]
+  },
+  "T2-04": {
+    "executive_summary": "Nexus Data is a New customer account with limited historical context in the supplied dataset. Recent ticket history is sparse, so support activity alone is not sufficient to assess long-term account health. The TAM should focus on onboarding progress and early product adoption. Additional customer context should be gathered during the next account interaction.",
+    "open_risks": [],
+    "talking_points": [
+      "Review onboarding progress and early product adoption.",
+      "Identify any blockers affecting successful rollout."
+    ]
+  },
+  "T2-05": {
+    "executive_summary": "Omni Consumer Products is marked At Risk with inactive usage and limited recent ticket history. The available data should be interpreted cautiously because the account summary and ticket history provide different levels of detail. One recent P2 DataBridge Pro performance ticket is recorded as closed. The TAM should validate current usage and confirm resolution status.",
+    "open_risks": [],
+    "talking_points": [
+      "Validate current usage and adoption.",
+      "Confirm resolution of the recent performance issue."
+    ]
+  }
+}
