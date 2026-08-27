@@ -23,20 +23,37 @@ RISK_KEYWORDS = {
 }
 
 
+def _extract_quote(
+    subject: str,
+    body: str,
+    matched_keywords: list[str],
+) -> str:
+    """Extract a concise direct quote containing a risk signal."""
+
+    lines = [
+        line.strip()
+        for line in body.splitlines()
+        if line.strip()
+    ]
+
+    for keyword in matched_keywords:
+        for line in lines:
+            if keyword.lower() in line.lower():
+                return line
+
+    if lines:
+        return lines[0]
+
+    return subject.strip()
+
+
 def detect_account_risks(
     account: dict,
     tickets: list[dict],
 ) -> list[dict]:
-    """
-    Detect deterministic churn and escalation signals
-    from account metadata and recent ticket history.
-    """
+    """Detect deterministic churn and escalation signals."""
 
     risks = []
-
-    # ---------------------------------------------------------
-    # 1. Account-level escalation notes
-    # ---------------------------------------------------------
 
     for note in account.get("escalation_notes", []):
         note_lower = note.lower()
@@ -45,46 +62,32 @@ def detect_account_risks(
             keyword in note_lower
             for keyword in RISK_KEYWORDS["churn"]
         ):
-            risks.append(
-                {
-                    "type": "churn",
-                    "source": "account",
-                    "evidence": note,
-                }
-            )
+            risks.append({
+                "type": "churn",
+                "source": "account",
+                "evidence": note,
+            })
 
         elif any(
             keyword in note_lower
             for keyword in RISK_KEYWORDS["escalation"]
         ):
-            risks.append(
-                {
-                    "type": "escalation",
-                    "source": "account",
-                    "evidence": note,
-                }
-            )
-
-    # ---------------------------------------------------------
-    # 2. Structured P1 escalation signal
-    # ---------------------------------------------------------
+            risks.append({
+                "type": "escalation",
+                "source": "account",
+                "evidence": note,
+            })
 
     p1_count = account.get("p1_tickets_last_30d", 0)
 
     if p1_count >= 2:
-        risks.append(
-            {
-                "type": "escalation",
-                "source": "account",
-                "evidence": (
-                    f"{p1_count} P1 tickets in the last 30 days"
-                ),
-            }
-        )
-
-    # ---------------------------------------------------------
-    # 3. Ticket-level churn / escalation signals
-    # ---------------------------------------------------------
+        risks.append({
+            "type": "escalation",
+            "source": "account",
+            "evidence": (
+                f"{p1_count} P1 tickets in the last 30 days"
+            ),
+        })
 
     for ticket in tickets:
         subject = ticket.get("subject", "")
@@ -100,14 +103,22 @@ def detect_account_risks(
             ]
 
             if matched:
-                risks.append(
-                    {
-                        "type": risk_type,
-                        "source": "ticket",
-                        "ticket_id": ticket["ticket_id"],
-                        "evidence": body,
-                        "matched_keywords": matched,
-                    }
+                quote = _extract_quote(
+                    subject,
+                    body,
+                    matched,
                 )
+
+                risks.append({
+                    "type": risk_type,
+                    "source": "ticket",
+                    "ticket_id": ticket["ticket_id"],
+                    "evidence": (
+                        f"Matched risk keywords: "
+                        f"{', '.join(matched)}"
+                    ),
+                    "quote": quote,
+                    "matched_keywords": matched,
+                })
 
     return risks
